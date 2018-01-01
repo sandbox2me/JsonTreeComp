@@ -1,0 +1,13 @@
+{
+  "name": "JsonTreeComp",
+  "version": "1.0.0",
+  "description": "A Vue.js (>= 2.5) web component that displays a JSON formatted object as a hierarchical tree. ",
+  "main": "entry.js",
+  "repository": "https://github.com/deandevl/JsonTreeComp.git",
+  "author": "'Rick <deanr3@bardstown.com>",
+  "license": "MIT",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "vue": "^2.5.9"
+  }
+}

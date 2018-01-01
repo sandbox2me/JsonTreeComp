@@ -1,0 +1,57 @@
+:root {
+  --jsontree_comp_font_family: Verdana,serif;
+  --jsontree_comp_font_size: 14px;
+  --jsontree_comp_color: black;
+  --jsontree_comp_background: transparent;
+  --jsontree_comp_width: 250px;
+  --jsontree_comp_height: 300px;
+
+  --jsontree_comp_title_font_size: 18px;
+  --jsontree_comp_title_color: black;
+}
+
+.spanclass {
+  cursor: pointer;
+}
+.hideit {
+  display: none;
+}
+
+.jsontree_comp_container {
+  font-family: var(--jsontree_comp_font_family);
+  font-size: var(--jsontree_comp_font_size);
+  background: var(--jsontree_comp_background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title_box {
+    color: var(--jsontree_comp_title_color);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .tree_content {
+    color: var(--jsontree_comp_color);
+    width: var(--jsontree_comp_width);
+    height: var(--jsontree_comp_height);
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar {
+      height: 12px;
+      width: 8px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #D62929;
+    }
+  }
+}

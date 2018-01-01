@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JsonTreeComp Demo</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../JsonTreeComp.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.css">
+  </head>
+  <style>
+    .demo_container {
+      width: 800px;
+      height: 600px;
+      background-color: black;
+      padding-top: 100px;
+      color: white;
+    }
+    p {
+      margin: 60px;
+    }
+  </style>
+  
+  <body>
+    <div id="app"></div>
+    <!--for production-->
+    <!--
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    -->
+    <!--for debugging Vue--> 
+    <script src="https://unpkg.com/vue"></script>
+    
+    <script type="module" src="../JsonTreeComp.js"></script>
+    <script type="module" src="./entry.js"></script>
+  </body>
+</html>
