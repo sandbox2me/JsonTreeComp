@@ -64,15 +64,14 @@ export const JsonTreeComp = {
     render_json: function(h,parent_node,obj,indent){
       for(const key in obj){
         if((obj[key] instanceof Object) && !(obj[key] instanceof Array)){
-          const ele_i = h('i', {
-            attrs: {'class': 'fa fa-angle-right'},
+          const ele_icon = h('span', {
+            attrs: {'class': 'icon_closed'},
+            on: {click: this.click_handler},
             style: {'margin-left': `${indent}px`}
           });
-          parent_node.children.push(ele_i);
+          parent_node.children.push(ele_icon);
 
           const ele_span = h('span', {
-            attrs: {class: 'spanclass'},
-            on: {click: this.click_handler}
           },[' ' + key + ': {']);
           parent_node.children.push(ele_span);
 
@@ -88,15 +87,14 @@ export const JsonTreeComp = {
           },['}']);
           parent_node.children.push(ele_div);
         }else if(obj[key] instanceof Array){
-          const ele_i = h('i', {
-            attrs: {'class': 'fa fa-angle-right'},
+          const ele_icon = h('span', {
+            attrs: {'class': 'icon_closed'},
+            on: {click: this.click_handler},
             style: {'margin-left': `${indent}px`}
           });
-          parent_node.children.push(ele_i);
+          parent_node.children.push(ele_icon);
 
           const ele_span = h('span', {
-            attrs: {class: 'spanclass'},
-            on: {click: this.click_handler}
           },[' ' + key + ': [']);
           parent_node.children.push(ele_span);
 
@@ -125,21 +123,23 @@ export const JsonTreeComp = {
     click_handler: function(e){
       e.stopPropagation();
       e.preventDefault();
-      if(e.currentTarget.previousSibling.classList.contains('fa-angle-right')){
-        e.currentTarget.previousSibling.classList.remove('fa-angle-right');
-        e.currentTarget.previousSibling.classList.add('fa-angle-down');
+      if(e.currentTarget.classList.contains('icon_closed')){
+        e.currentTarget.classList.remove('icon_closed');
+        e.currentTarget.classList.add('icon_open');
       }else{
-        e.currentTarget.previousSibling.classList.remove('fa-angle-down');
-        e.currentTarget.previousSibling.classList.add('fa-angle-right');
+        e.currentTarget.classList.remove('icon_open');
+        e.currentTarget.classList.add('icon_closed');
       }
-      if(e.currentTarget.children[0].classList.contains('hideit')){
-        e.currentTarget.children[0].classList.remove('hideit')
+      if(e.currentTarget.nextSibling.children[0].classList.contains('hideit')){
+        e.currentTarget.nextSibling.children[0].classList.remove('hideit')
       }else{
-        e.currentTarget.children[0].classList.add('hideit');
+        e.currentTarget.nextSibling.children[0].classList.add('hideit');
       }
     }
   },
   mounted() {
+    //parent to child
+    //Data set via event because it may take a while
     if(this.event_bus !== null && this.name !== null){
       this.event_bus.$on('jsontree_comp_json_obj', (name,json_obj) =>{
         if(name === this.name){

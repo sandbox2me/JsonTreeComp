@@ -7,7 +7,6 @@
   "author": "'Rick <deanr3@bardstown.com>",
   "license": "MIT",
   "dependencies": {
-    "font-awesome": "^4.7.0",
     "vue": "^2.5.9"
   }
 }

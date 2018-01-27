@@ -1,6 +1,6 @@
 ## json-tree-comp
 
-**json-tree-comp** is a Vue.js (>= 2.5) web component that displays a JSON formatted object as a hierarchical tree.  **json-tree-comp** depends on the [vue.js](https://vuejs.org/ "Vue.js") framework and [fontawesome](http://fontawesome.io/ "fontawesome").  The dependencies can be installed via [yarn install](https://yarnpkg.com/en/docs/cli/install/  "yarn install") with the included `package.json`file.
+**json-tree-comp** is a Vue.js (>= 2.5) web component that displays a JSON formatted object as a hierarchical tree.  **json-tree-comp** depends on the [vue.js](https://vuejs.org/ "Vue.js") framework.  The dependency can be installed via [yarn install](https://yarnpkg.com/en/docs/cli/install/  "yarn install") with the included `package.json`file.
 
 ## Props
 
@@ -32,6 +32,8 @@ The `css_variables` prop is a javascript object that contains any combination of
       jsontree_comp_background: 'transparent',
       jsontree_comp_width: '250px',
       jsontree_comp_height: '300px',
+
+      jsontree_comp_down_icon: '\21D3',
 
       jsontree_comp_title_font_size: '18px',
       jsontree_comp_title_color: 'black'
